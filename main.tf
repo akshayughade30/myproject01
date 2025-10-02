@@ -56,13 +56,3 @@ resource "aws_instance" "web" {
     Name = "terraform-ec2"
   }
 }
-
-# S3 Bucket
-resource "aws_s3_bucket" "bucket" {
-  bucket        = "my-terraform-s3-akshay"
-  force_destroy = true
-
-  tags = {
-    Name = "terraform-bucket"
-  }
-}
