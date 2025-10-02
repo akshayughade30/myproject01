@@ -47,9 +47,9 @@ resource "aws_security_group" "web_sg" {
 
 # EC2 Instance
 resource "aws_instance" "web" {
-  ami           = "ami-0c55b159cbfafe1f0" # Amazon Linux 2
-  instance_type = "t2.micro"
-  subnet_id     = aws_subnet.public.id
+  ami                    = "ami-0c55b159cbfafe1f0" # Amazon Linux 2
+  instance_type          = "t2.micro"
+  subnet_id              = aws_subnet.public.id
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
   tags = {
@@ -59,7 +59,7 @@ resource "aws_instance" "web" {
 
 # S3 Bucket
 resource "aws_s3_bucket" "bucket" {
-  bucket = "my-terraform-s3-akshay"
+  bucket        = "my-terraform-s3-akshay"
   force_destroy = true
 
   tags = {
